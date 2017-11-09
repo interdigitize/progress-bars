@@ -10,6 +10,11 @@
 
 * Solve using: HTML, CSS, jQuery, JavaScript
 
-*First Solution*
-This solution uses CSS to create and update progress bars.
-[Check it out on JSFiddle](https://jsfiddle.net/yvpnur6u/2/);
+**First Solution**
+
+This solution uses CSS to create and update progress bars. [Check it out on JSFiddle](https://jsfiddle.net/yvpnur6u/2/)
+
+
+**Second Solution**
+
+This solution refactors to use the HTML progress element. [Check it out on JSFiddle](https://jsfiddle.net/yvpnur6u/4/)

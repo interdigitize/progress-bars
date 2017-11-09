@@ -6,9 +6,7 @@ var barQueue = [];
 function makeAndAppend() {
 	//create a unique id based on the progress bar count
 	let bar = `bar${++barCount}`;
-	$('#progress-bar-area').append(`<div id="${bar}" class="bar"></div>`)
-  //start the css at 0%, since this will be constantly changing, I removed it from the css file
-  $(`#${bar}`).css({'width': '0%'})
+	$('#progress-bar-area').append(`<progress id="${bar}" value="0" max="100"></progress><br>`)
   //call a function to add the bar to a queue
   queue(bar);
 }
@@ -46,20 +44,20 @@ function start(queue) {
 }
 
 function increaseBar(bar, increase, resolve) {
-	//determine and store the width as a percentage
-	let width = Math.ceil($(`#${bar}`).width() / $('#progress-bar-area').width() * 100);
+	//get the current progress bar value
+	let progressVal = $(`#${bar}`).attr('value')
   //when it reaches 100%
-  if (width >= 100) {
-		$(`#${bar}`).width('100%');
+  if (progressVal >= 100) {
+		$(`#${bar}`).attr({'value': 100})
   	//stop calling the increase function
     clearInterval(increase);
     //resolve the promise
     resolve(`Progress ${bar} finished!`);
   } else {
-  	//until it reaches 100%, continually add 3.5 percent on every iteration
-  	width += 3.5;
-    //update the width percentage
-    $(`#${bar}`).width(`${width}%`);
+  	//until it reaches 100%, continually add 3.3 percent on every iteration
+  	progressVal = parseInt(progressVal) + 3.3;
+    //update the progressVal percentage
+		$(`#${bar}`).attr({'value': progressVal})
   }
 }
 
