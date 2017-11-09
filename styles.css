@@ -1,9 +1,52 @@
-/*#progress-bar-area {
-    width: 100%;
-    background-color: grey;
-}*/
+body{
+  margin: 30% auto;
+  background-color: #f6f6f6;
+}
 
-/*.bar {
-  height: 20px;
-  background-color: green;
-}*/
+.container {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 350px;
+  background-color: #ffffff;
+  padding:30px;
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+}
+
+.bar {
+  width: 70%;
+  display:block;
+  margin: 0 auto;
+}
+
+.btn {
+  margin: 0 5px 20px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.btn:hover {
+  opacity: .7;
+}
+
+.progress-btn {
+  background-color: #4469af;
+  color: white;
+  font-size: 1em;
+}
+
+.clear-btn {
+  display: block;
+  position: relative;
+  top: -12px;
+  left: -8px;
+  padding: 0px;
+  margin: 0px;
+  background-color: transparent;
+  border: 0px solid #e9e9e9;
+}
+
+.clear-btn:focus {
+  outline: none;
+}
