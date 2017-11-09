@@ -6,7 +6,7 @@ var barQueue = [];
 function makeAndAppend() {
 	//create a unique id based on the progress bar count
 	let bar = `bar${++barCount}`;
-	$('#progress-bar-area').append(`<progress id="${bar}" value="0" max="100"></progress><br>`)
+	$('#progress-bar-area').append(`<progress id="${bar}" value="0" max="100" class="bar"></progress>`)
   //call a function to add the bar to a queue
   queue(bar);
 }
@@ -63,4 +63,5 @@ function increaseBar(bar, increase, resolve) {
 
 function clearProgressBars() {
 	$('#progress-bar-area').empty();
+	barQueue = [];
 }
